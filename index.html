@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode"> <!-- Start with dark mode -->
+    <div id="job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Job Application</h2>
+            <p id="job-title"></p>
+            <button id="confirm-apply">Confirm Application</button>
+        </div>
+    </div>
+    <header>
+        <h1>Job Board</h1>
+        <input type="text" id="search" placeholder="Search for jobs...">
+        <button id="theme-toggle" class="toggle-button">🌙</button> <!-- Theme toggle button -->
+    </header>
+
+    <main id="job-listings"></main>
+
+    <script src="script.js"></script>
+</body>
+</html>

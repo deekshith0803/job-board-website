@@ -1,0 +1,230 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text colors */
+    background-color: #121212; /* Default dark background */
+    color: #e0e0e0; /* Default light text color */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #6a1b9a, #d5006d); /* Bold gradient background */
+    color: #ffffff; /* White text */
+    padding: 20px 30px; /* Adjusted padding */
+    width: 100%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for more depth */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Light border at the bottom */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger title font */
+    margin-bottom: 5px; /* Spacing below title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* More pronounced shadow for better visibility */
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 1.8em; /* Slightly larger icon size */
+    cursor: pointer;
+    position: absolute;
+    right: 30px; /* Spacing from right */
+    top: 20px; /* Spacing from top */
+    color: #ffffff; /* Default to white for dark mode */
+    transition: transform 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.toggle-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #ffeb3b; /* Change color on hover */
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-top: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: none; /* Remove default border */
+    border-radius: 25px; /* Rounded corners for the input */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent input background */
+    color: #ffffff; /* White input text */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* Highlight on focus */
+}
+
+/* Job Listings Styles */
+#job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid layout */
+    gap: 1.5rem; /* Increased gap between cards */
+    padding: 1rem;
+    width: 100%;
+    max-width: 1200px; /* Limit maximum width */
+    margin: auto; /* Center the job listings */
+}
+
+.job-card {
+    border: 1px solid #444; /* Dark border for job cards */
+    padding: 1.5rem; /* Increased padding */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #1e1e1e; /* Dark card background */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    position: relative; /* Position for pseudo-element */
+    overflow: hidden; /* Hide overflow for hover effects */
+}
+
+.job-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Shadow effect on hover */
+}
+
+.job-card h3 {
+    color: #ffffff; /* White job title */
+    font-size: 1.6em; /* Larger title font */
+    margin-bottom: 0.5rem; /* Spacing below title */
+}
+
+.job-card p {
+    color: #b0b0b0; /* Gray description text */
+    margin-bottom: 0.5rem; /* Spacing below description */
+}
+
+.job-card .company {
+    font-weight: bold; /* Make company name bold */
+    color: #ffeb3b; /* Yellow color for company name */
+}
+
+.job-card .location {
+    font-style: italic; /* Italic style for location */
+    color: #ccc; /* Lighter gray for location */
+}
+
+/* Button Styling */
+.apply-button {
+    background-color: #6200ea; /* Purple button */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.apply-button:hover {
+    background-color: #7e1fff; /* Lighter purple on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
+}
+
+header.light-mode {
+    background: linear-gradient(135deg, #ff8f00, #ff6f00); /* Lighter gradient for header in light mode */
+    color: #000000; /* Dark header text */
+}
+
+input[type="text"].light-mode {
+    background-color: rgba(0, 0, 0, 0.1); /* Light input background */
+    color: #000; /* Dark input text */
+    border: 1px solid #aaa; /* Lighter border */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Adjust title size for smaller screens */
+    }
+
+    .toggle-button {
+        font-size: 1.5em; /* Adjust icon size for smaller screens */
+    }
+
+    #job-listings {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .apply-button {
+        width: 100%; /* Full width button on small screens */
+    }
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+}
+
+.modal h2{
+    color: #ffffff;
+}
+
+.modal-content {
+    background-color:  #1e1e1e;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Limit max width */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.close {
+    color: #aaa;
+    float: right; /* Align close button to the right */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#confirm-apply {
+    background-color: #00c4cc; /* Button color */
+    color: #1e1e1e;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#confirm-apply:hover {
+    background-color: #008c90; /* Darker button on hover */
+}
+#job-title{
+    color: #b0b0b0;
+}
